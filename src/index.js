@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+let userEmails = [
+    "Aisha.dabbagh@gmail.com",
+    "Aisha.Dabbagh@alumni.qimam.com",
+    "A.dabbagh@hotmail.com"
+];
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+//Sending user_emails to app//
+ReactDOM.render(
+<App userEmails={userEmails}/>,
+document.getElementById('root'));
