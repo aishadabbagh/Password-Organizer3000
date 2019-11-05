@@ -5,7 +5,7 @@ import ListEmail from "./ListEmail";
 const UserEmailList = props =>{
     const items = props.userEmails.map(function(item,index){
         //to specifically remove an element// 
-    return<ListEmail fun={(e)=>props.fun(item)} name={item} key={index} />
+    return<ListEmail delete={(e)=>props.delete(item.Email)} name={item.Email} key={index} />
     })
     return(
     <ul>
