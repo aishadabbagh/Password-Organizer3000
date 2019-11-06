@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Password-Organizer3000/precache-manifest.338e8a963883e1ef8d4e541cae514d96.js"
+  "/Password-Organizer3000/precache-manifest.ef25a40f973d62bc37973100354b8820.js"
 );
 
 self.addEventListener('message', (event) => {

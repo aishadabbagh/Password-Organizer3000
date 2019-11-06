@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cfb9472b358f999233129c2f9968b9ee",
+    "revision": "9142f9c8a8cd0a89d515e318bc3c32e3",
     "url": "/Password-Organizer3000/index.html"
   },
   {
-    "revision": "f5a560e011adc94dc5f6",
+    "revision": "58b0276d6c4541364dd3",
     "url": "/Password-Organizer3000/static/css/main.b100e6da.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Password-Organizer3000/static/js/2.fb9dc278.chunk.js"
   },
   {
-    "revision": "f5a560e011adc94dc5f6",
-    "url": "/Password-Organizer3000/static/js/main.72e45e0b.chunk.js"
+    "revision": "58b0276d6c4541364dd3",
+    "url": "/Password-Organizer3000/static/js/main.bef5818b.chunk.js"
   },
   {
     "revision": "6994f5f5f5be628a3550",
