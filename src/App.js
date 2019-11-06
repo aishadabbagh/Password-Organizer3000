@@ -10,24 +10,28 @@ import Password from "./Password";
 class App extends Component{
   constructor(props){
     super(props);
-
     //To search for the user's Account
     //Creating text box
     this.state ={
     searchValue: "",
-    //1
     accounts: this.props.userEmails,
-    //2
     accountsToBeDisplayed: this.props.userEmails,
     newItem: "",
     //this variable is intended for rendering components when pressing an email
-    selectedAcc: null
+    selectedAcc: null,
+    value :[]
     } 
   } 
 
   updateAccInfo = (email, newAccInfo) => {
-    console.log('it works...');
-  }
+  const account = this.state.accounts.find(account => {
+    console.log(account.Email.toLowerCase() == email.toLowerCase());
+    // selectedAcc= account
+  });
+
+  // this.setState({
+
+ }
 
   //Display informatio for each email
   accInfo = (email) => {
@@ -73,6 +77,14 @@ class App extends Component{
           newItem: event.target.value
         });
       };
+      onTextBoxChangeE = (event, i) => {
+        console.log("On Text Change", event.target.value);
+        const newValue = [...this.state.value];
+        newValue[i]= event.target.value;
+        this.setState({
+          value: newValue
+        });
+      };
       
     /////////////adding////////////// 
      addAccount = () => {
@@ -106,9 +118,8 @@ class App extends Component{
         accounts: accounts,
         accountsToBeDisplayed: accounts
       });
-     }
-
-
+  
+    }
      ///////Edit password in an account//////
 
 
@@ -136,8 +147,8 @@ class App extends Component{
        if(this.state.selectedAcc){
          page=<>
          <button onClick={()=>{this.setState({selectedAcc:null})}}>GOING BACK</button>
-         <Password updateAcc={this.updateAccInfo} acc = {this.state.selectedAcc} 
-        //  handleClickEvent={props.handleClickEvent}
+         <Password updateAcc={this.updateAccInfo} acc = {this.state.selectedAcc} value={this.state.value} onChangeE={this.onTextBoxChangeE}
+        
          />
          </>
        }

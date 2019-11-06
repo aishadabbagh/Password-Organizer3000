@@ -1,47 +1,38 @@
 import React, {Component} from "react";
+import PassList from './PassList'
 
 class Password extends Component{
 constructor(props){
-    super(props);
-    this.state={
+        super(props);
+        this.state={
         newItem: "",
     }
 }
-    onTextBoxChange = (event) => {
-        console.log("On Text Change", event.target.value);
-        this.setState({
-          newItem: event.target.value
 
-        });
-      };
 
       
 render(){
-    let list = <p>Nothing</p>;
+    let list = <p>[New Account] add Passwords </p>;
 
     if (this.props.acc.Website) {
-        list = this.props.acc.Website.map(website => {
-           return <li>
-                {website.site}: {website.pass} 
-                <button className = "update" >Update </button>
-
-            <input
-            type="text"
-            placeholder="type a task"
-            value={this.state.newItem}
-            onChange={this.onTextBoxChange}
+            list = this.props.acc.Website.map(website => {
+            return(
+            <PassList 
+                website={website} 
+                onTextBoxChange={this.props.onTextBoxChange}
+                updateAcc={this.props.updateAcc} 
+                acc={this.props.acc} value={this.props.value} 
+                onChangeE={this.props.onChangeE}
             />
-            </li>
-        });
-
-    }
-
+        )
+    })
+}
 
     return(
-        <>
-        <h1>{this.props.acc.Email}</h1>
-        <ul>{list}</ul>
-        </>
+    <div>
+           <h1>{this.props.acc.Email}</h1>
+            {list}
+    </div>
     )
 }
 }
