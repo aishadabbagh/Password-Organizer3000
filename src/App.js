@@ -2,7 +2,10 @@ import React, {Component} from "react";
 import UserEmailList from "./Functionalities_MainP/UserEmailList";
 import './App.css';
 import Search from "./Functionalities_MainP/Search";
-// import ListEmail from "./Functionalities_MainP/ListEmail";
+import Password from "./Password";
+
+
+
 
 class App extends Component{
   constructor(props){
@@ -14,10 +17,21 @@ class App extends Component{
     searchValue: "",
     accounts: this.props.userEmails,
     accountsToBeDisplayed: this.props.userEmails,
-    newItem: ""
+    newItem: "",
+    selectedAcc: null
     } 
   } 
 
+  accInfo = (email) => {
+    const account = this.state.accounts.find(account => {
+      return account.Email.toLowerCase() == email.toLowerCase()
+    });
+
+    this.setState({
+      selectedAcc: account
+    })
+
+  }
     //////////deleting all items/////////
     clearList = (event) => {
       this.setState({
@@ -88,14 +102,14 @@ class App extends Component{
 
 
   render(){
-  return (
 
-    <div className="App">
-      <h1>Personal Password Organizer</h1>
-      <Search value={this.state.searchValue}
+ 
+
+    let page = <>
+    <Search value={this.state.searchValue}
       //inserting the value in the text 
       onChange={this.handleSearchChange} />
-      <UserEmailList delete={this.removeAccount} userEmails={this.state.accountsToBeDisplayed}/>
+      <UserEmailList delete={this.removeAccount} userEmails={this.state.accountsToBeDisplayed} handleClickEvent={this.accInfo}/>
       {/* box to add or delete */}
        <input
           type="text"
@@ -105,7 +119,17 @@ class App extends Component{
         />
         <button onClick={this.addAccount}> Add email</button> 
        <button onClick={this.clearList}>Delete all emails</button> 
+    </>
+       if(this.state.selectedAcc){
+         page=<>
+         <button onClick={()=>{this.setState({selectedAcc:null})}}>GOING BACK</button>
+         <Password acc = {this.state.selectedAcc}/></>
+       }
+  return (
 
+    <div className="App">
+      <h1>Password Organizer 3000</h1>
+      {page}
     </div>
     );
   }

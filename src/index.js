@@ -6,22 +6,35 @@ import App from './App';
 const userEmails = [{
     ID: 1,
     Email : "Aisha.dabbagh@gmail.com",
-    "Website": [
-    {"Facebook": "1234"},
-    {"Twitter": "0000"},
-    {"Google": "4321"}] 
+    Website: [
+    {site: "Facebook",
+    pass:"1234"},
+
+    {site: "Twitter",
+    pass: "0000"},
+
+    {site: "Google",
+    pass :"4321"}] 
 },
 {   ID: 2,
     Email : "a.dabbagh@hotmail.com",
-    "Website": [
-    {"Yahoo" : "kkkk"},
-    {"Youtube": "1234"}]
+    Website: [
+
+    {site: "Yahoo",
+    pass: "kkkk"},
+
+    {site: "Youtube",
+    pass: "1234"}]
 },
 {   ID: 3,
     Email : "a.d@yahoo.com",
-    "Website": [
-    {"Yahoo" : "kkkk"},
-    {"Youtube": "4444"} ] 
+    Website: [
+
+    {site: "Yahoo",
+    pass: "kkkk"},
+
+    {site: "Youtube", 
+    pass:"4444"}] 
 }
 ];
 

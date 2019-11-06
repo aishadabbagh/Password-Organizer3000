@@ -5,11 +5,12 @@ import ListEmail from "./ListEmail";
 const UserEmailList = props =>{
     const items = props.userEmails.map(function(item,index){
         //to specifically remove an element// 
-    return<ListEmail delete={(e)=>props.delete(item.Email)} name={item.Email} key={index} />
+    return<ListEmail delete={(e)=>props.delete(item.Email)} name={item.Email} key={index} handleClickEvent={props.handleClickEvent}/>
     })
     return(
     <ul>
         {items}
+
     </ul>
     )
 }
