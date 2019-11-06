@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Password-Organizer3000/static/css/main.b100e6da.chunk.css",
+    "main.js": "/Password-Organizer3000/static/js/main.72e45e0b.chunk.js",
+    "main.js.map": "/Password-Organizer3000/static/js/main.72e45e0b.chunk.js.map",
+    "runtime-main.js": "/Password-Organizer3000/static/js/runtime-main.b5b34b25.js",
+    "runtime-main.js.map": "/Password-Organizer3000/static/js/runtime-main.b5b34b25.js.map",
+    "static/js/2.fb9dc278.chunk.js": "/Password-Organizer3000/static/js/2.fb9dc278.chunk.js",
+    "static/js/2.fb9dc278.chunk.js.map": "/Password-Organizer3000/static/js/2.fb9dc278.chunk.js.map",
+    "index.html": "/Password-Organizer3000/index.html",
+    "precache-manifest.338e8a963883e1ef8d4e541cae514d96.js": "/Password-Organizer3000/precache-manifest.338e8a963883e1ef8d4e541cae514d96.js",
+    "service-worker.js": "/Password-Organizer3000/service-worker.js",
+    "static/css/main.b100e6da.chunk.css.map": "/Password-Organizer3000/static/css/main.b100e6da.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b5b34b25.js",
+    "static/js/2.fb9dc278.chunk.js",
+    "static/css/main.b100e6da.chunk.css",
+    "static/js/main.72e45e0b.chunk.js"
+  ]
+}
