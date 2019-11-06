@@ -15,13 +15,21 @@ class App extends Component{
     //Creating text box
     this.state ={
     searchValue: "",
+    //1
     accounts: this.props.userEmails,
+    //2
     accountsToBeDisplayed: this.props.userEmails,
     newItem: "",
+    //this variable is intended for rendering components when pressing an email
     selectedAcc: null
     } 
   } 
 
+  updateAccInfo = (email, newAccInfo) => {
+    console.log('it works...');
+  }
+
+  //Display informatio for each email
   accInfo = (email) => {
     const account = this.state.accounts.find(account => {
       return account.Email.toLowerCase() == email.toLowerCase()
@@ -101,10 +109,13 @@ class App extends Component{
      }
 
 
+     ///////Edit password in an account//////
+
+
+
+
   render(){
-
- 
-
+    //due to tight schedule, used render to display infomration instead of a function
     let page = <>
     <Search value={this.state.searchValue}
       //inserting the value in the text 
@@ -120,10 +131,15 @@ class App extends Component{
         <button onClick={this.addAccount}> Add email</button> 
        <button onClick={this.clearList}>Delete all emails</button> 
     </>
+
+
        if(this.state.selectedAcc){
          page=<>
          <button onClick={()=>{this.setState({selectedAcc:null})}}>GOING BACK</button>
-         <Password acc = {this.state.selectedAcc}/></>
+         <Password updateAcc={this.updateAccInfo} acc = {this.state.selectedAcc} 
+        //  handleClickEvent={props.handleClickEvent}
+         />
+         </>
        }
   return (
 
