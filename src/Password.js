@@ -15,14 +15,18 @@ render(){
     let list = <p>[New Account] add Passwords </p>;
 
     if (this.props.acc.Website) {
-            list = this.props.acc.Website.map(website => {
+            list = this.props.acc.Website.map((website, index) => {
             return(
             <PassList 
                 website={website} 
                 onTextBoxChange={this.props.onTextBoxChange}
                 updateAcc={this.props.updateAcc} 
-                acc={this.props.acc} value={this.props.value} 
+                acc={this.props.acc} 
+                value={this.props.value}
+                //////////////// 
                 onChangeE={this.props.onChangeE}
+                key={index}
+                i={index}
             />
         )
     })

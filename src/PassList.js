@@ -9,12 +9,12 @@ class UpdatingAccPass extends Component {
       <div>
         <li>
           {this.props.website.site}: {this.props.website.pass}
-          <button className="update" onClick={() => {this.props.updateAcc(this.props.acc, this.state.newItem )}}>Update </button>
+          <button className="update" onClick={() => {this.props.updateAcc(this.props.acc.Email,this.props.website.site, this.props.i)}}>Update </button>
           <input
             type="text"
             placeholder="type a task"
-            value={this.props.value}
-            onChange={this.props.onChangeE}
+            value={this.props.value[this.props.i]}
+            onChange={(e) => this.props.onChangeE(e,this.props.i)}
           />
         </li>
       </div>
