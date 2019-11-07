@@ -3,6 +3,25 @@ import UserEmailList from "./Functionalities_MainP/UserEmailList";
 import "./App.css";
 import Search from "./Functionalities_MainP/Search";
 import Password from "./Password";
+import axios from 'axios';
+
+
+///////////Axios Background API////////
+const backgroundImg = document.querySelector(".background");
+axios({
+  method: "get",
+  url: "https://api.unsplash.com/photos/random?client_id=e4c00a52a5bbc6241b312ba1663f5c496f52de5d29fe0e4dd30a95b41b3ec4fd"
+})
+.then (response => {
+  const bgImage = response.data.urls.regular;
+  console.log(response);
+  backgroundImg.style.backgroundImage= `url(${bgImage})`;
+
+})
+.catch( error =>{
+  console.log(error);
+})
+
 
 class App extends Component {
   constructor(props) {
@@ -19,7 +38,7 @@ class App extends Component {
       value: {}
     };
   }
-
+  
   //////Display informatio for each email///////
   accInfo = email => {
     const account = this.state.accounts.find(account => {
@@ -85,24 +104,7 @@ class App extends Component {
     this.setState({
       accounts: newAccounts
     })
-    
-    // value = this.state.value;
-    // email=
-    // this.setState({
-
-    // })
-    // const account = this.state.accounts.find(account => {
-    // console.log(account.Email.toLowerCase()
-    // == email.toLowerCase());
-    //   })
   };
-  // changeBody = (e) =>{
-  // console.log("button clicked");
-  // const newBody = prompt("what should the new body be?")
-  // this.setState({
-  //   body: this.state.body = newBody
-  // });
-  // }
 
   /////////////adding//////////////
   addAccount = () => {
