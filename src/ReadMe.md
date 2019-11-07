@@ -5,7 +5,13 @@
 <p>Password Organizer 3000 is a platform that helps users store and manage their social media  accounts and passwords. 
 
 <h2>Technologies used</h2>
-<p>JS, CSS, React, API, and Dome<p>
+<ul>
+<li>JS</li>
+<li>CSS</li> 
+<li>React</li>
+<li>API</li>
+<li>Dome</li>
+</ul>
 
 <h2> User Story <h2>
 <ul>

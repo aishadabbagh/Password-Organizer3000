@@ -74,7 +74,7 @@ class App extends Component {
     });
   };
 
-  /////Function handling the change of adding and deleting///
+  /////Function handling the change of adding///
   onTextBoxChange = event => {
     console.log("On Text Change", event.target.value);
 
@@ -126,7 +126,7 @@ class App extends Component {
   ////////////delete a certain email//////////
   removeAccount = email => {
     const accounts = [...this.state.accounts];
-    console.log("//////////-----/////0:", email, "././././././././", accounts);
+    console.log( email, accounts);
     const accountIndex = accounts.findIndex(account => {
       return account.Email === email;
     });
@@ -155,7 +155,7 @@ class App extends Component {
           userEmails={this.state.accountsToBeDisplayed}
           handleClickEvent={this.accInfo}
         />
-        {/* box to add or delete */}
+        {/* box to add */}
         <input
           type="text"
           placeholder="type a task"
@@ -175,7 +175,7 @@ class App extends Component {
               this.setState({ selectedAcc: null });
             }}
           >
-            GOING BACK
+            Go Back to Accounts
           </button>
           <Password
             updateAcc={this.updateAccInfo}
