@@ -13,7 +13,7 @@
 <li>Dome</li>
 </ul>
 
-<h2> User Story <h2>
+<h2> User Story </h2>
 <ul>
 <li>User can search for emails saved in the data base</li>
 <li>User can add new email </li>
