@@ -7,7 +7,7 @@ import axios from 'axios';
 
 
 ///////////Axios Background API////////
-const backgroundImg = document.querySelector(".background");
+const body = document.querySelector("body");
 axios({
   method: "get",
   url: "https://api.unsplash.com/photos/random?client_id=e4c00a52a5bbc6241b312ba1663f5c496f52de5d29fe0e4dd30a95b41b3ec4fd"
@@ -15,7 +15,7 @@ axios({
 .then (response => {
   const bgImage = response.data.urls.regular;
   console.log(response);
-  backgroundImg.style.backgroundImage= `url(${bgImage})`;
+  body.style.backgroundImage= `url(${bgImage})`;
 
 })
 .catch( error =>{
